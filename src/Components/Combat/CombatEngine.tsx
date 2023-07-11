@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function CombatEngine(props: { value: number; setValue: (v: number) => void }) {
   useEffect(() => {
