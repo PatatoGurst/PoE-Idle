@@ -1,3 +1,5 @@
-const HomePage = () => <h1>Home Page</h1>;
+function HomePage(props: { value: number }) {
+  return <h1>Home Page {props.value}</h1>;
+}
 
 export default HomePage;
