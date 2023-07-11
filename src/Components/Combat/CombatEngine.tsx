@@ -1,12 +1,17 @@
 import { useEffect } from "react";
 
-function CombatEngine(props: { value: number; setValue: (v: number) => void }) {
+interface dataCombatEngine {
+  value: number;
+  setValue: (v: number) => void;
+}
+
+function CombatEngine(props: dataCombatEngine) {
   useEffect(() => {
     setTimeout(() => {
       if (props.value < 20) {
         props.setValue(props.value + 1);
       }
-    }, 100);
+    }, 1000);
   }, [props]);
 
   return <></>;
