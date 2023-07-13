@@ -1,30 +1,23 @@
-import { useState } from "react";
-import Header from "./Layout/Header/Header";
-import HomePage from "./Pages/HomePage";
-import Page1 from "./Pages/Page1";
-import Page2 from "./Pages/Page2";
-import CombatEngine from "./Combat/CombatEngine";
+import { useState } from 'react';
+import Header from './Layout/Header/Header';
+import HomePage from './Pages/HomePage';
+import Page1 from './Pages/Page1';
+import Page2 from './Pages/Page2';
+import CombatEngine from './Combat/CombatEngine';
 
-function PoEIdleGame() {
-  const [value, setValue] = useState(0);
+function PoEIdleGame(props: { value: number }) {
   function getPage() {
     const route = window.location.pathname;
-    if (route === "/page1") {
+    if (route === '/page1') {
       return <Page1 />;
-    } else if (route === "/page2") {
+    } else if (route === '/page2') {
       return <Page2 />;
     } else {
-      return <HomePage value={value} />;
+      return <HomePage value={props.value} />;
     }
   }
 
-  return (
-    <>
-      <Header />
-      <CombatEngine value={value} setValue={setValue} />
-      {getPage()}
-    </>
-  );
+  return <>{getPage()}</>;
 }
 
 export default PoEIdleGame;

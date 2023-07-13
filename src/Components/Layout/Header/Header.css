@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  background: #00022e;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  color: #fc86aa;
+}
+
+.icon {
+  padding: 10px;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.header-title {
+  margin: auto;
+}
