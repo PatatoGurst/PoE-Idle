@@ -13,7 +13,8 @@ function Header({ sideBarIsOpened, toggleSideBar }: HeaderInterface) {
         {sideBarIsOpened ? <ChevronLeftIcon /> : <MenuIcon />}
       </div>
       <div className='header-title'>
-        <a href='/'>Home</a> | <a href='page1'>Page 1</a> | <a href='page2'>Page 2</a>
+        <h3>Path of Ex-Idle</h3>
+        <h4>An idle game based on Path of Exile</h4>
       </div>
     </div>
   );

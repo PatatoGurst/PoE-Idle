@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactComponentElement, useState } from 'react';
 import './App.css';
 import CombatEngine from './Components/Combat/CombatEngine';
 import Footer from './Components/Layout/Footer/Footer';
@@ -8,7 +8,7 @@ import PoEIdleGame from './Components/PoEIdleGame';
 
 function App() {
   const [value, setValue] = useState(0);
-  const [isOpened, setIsOpened] = useState(false);
+  const [isOpened, setIsOpened] = useState(true);
 
   const toggleSideBar = () => setIsOpened(!isOpened);
 
