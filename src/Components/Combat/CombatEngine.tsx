@@ -1,18 +1,32 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-interface dataCombatEngineInterface {
+type dataCombatEngineType = {
   value: number;
+  increment: number;
   setValue: (v: number) => void;
-}
+};
 
-function CombatEngine(props: dataCombatEngineInterface) {
+const CLOCK_CYCLE: number = 1000;
+const CLOCK_TICK: number = 50;
+
+function CombatEngine(props: dataCombatEngineType) {
+  const [time, setTime] = useState(Date.now());
+  const [clock, setClock] = useState(0);
   useEffect(() => {
-    setTimeout(() => {
-      if (props.value < 20) {
-        props.setValue(props.value + 1);
+    const delta = Date.now() - time;
+    let newClock = clock + delta;
+    const toto = setTimeout(() => {
+      if (newClock >= CLOCK_CYCLE) {
+        newClock -= CLOCK_CYCLE;
+        if (props.value < 200000) {
+          props.setValue(props.value + props.increment);
+        }
       }
-    }, 1000);
-  }, [props]);
+      setClock(newClock);
+    }, CLOCK_TICK);
+    setTime(Date.now());
+    return () => clearTimeout(toto);
+  }, [props, clock]);
 
   return <></>;
 }

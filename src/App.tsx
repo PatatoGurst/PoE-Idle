@@ -9,8 +9,10 @@ import PoEIdleGame from './Components/PoEIdleGame';
 function App() {
   const [value, setValue] = useState(0);
   const [isOpened, setIsOpened] = useState(true);
+  const [increment, setIncrement] = useState(1);
 
   const toggleSideBar = () => setIsOpened(!isOpened);
+  const updateIncrement = (newIncrement: number) => setIncrement(increment + newIncrement);
 
   return (
     <div className='App'>
@@ -18,8 +20,8 @@ function App() {
       <div className='container'>
         <SideBar isOpened={isOpened} />
         <div className='main'>
-          <CombatEngine value={value} setValue={setValue} />
-          <PoEIdleGame value={value} />
+          <CombatEngine value={value} setValue={setValue} increment={increment} />
+          <PoEIdleGame value={value} updateIncrement={updateIncrement} />
         </div>
       </div>
       <Footer />
