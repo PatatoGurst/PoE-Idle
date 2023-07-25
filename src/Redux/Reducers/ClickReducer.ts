@@ -14,7 +14,7 @@ export default function clickReducer(state: clickType = defaultClickType, action
     case 'INCREMENT':
       return { ...state, totalValue: state.totalValue + state.increment };
     case 'UPDATE_INCREMENT':
-      return { ...state, increment: action.value };
+      return { ...state, increment: state.increment + action.value };
     default:
       return state;
   }

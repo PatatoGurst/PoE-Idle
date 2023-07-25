@@ -23,7 +23,7 @@ function CombatEngine(props: any) {
     }, CLOCK_TICK);
     setTime(Date.now());
     return () => clearTimeout(toto);
-  }, [props, clock, dispatch]);
+  }, [clock]);
 
   return <></>;
 }
