@@ -1,12 +1,15 @@
-type Page1Type = {
-  updateIncrement: () => void;
-};
+import { connect, useDispatch } from 'react-redux';
+import * as testActions from '../../Redux/Actions/ClickAction';
 
-const Page1 = (props: Page1Type) => (
-  <div>
-    <h1>Page 1</h1>
-    <button onClick={() => props.updateIncrement()}>+2 / s</button>
-  </div>
-);
+function Page1() {
+  const dispatch = useDispatch();
 
-export default Page1;
+  return (
+    <div>
+      <h1>Page 1</h1>
+      <button onClick={() => dispatch(testActions.updateIncrement(2))}>+2</button>
+    </div>
+  );
+}
+
+export default connect()(Page1);

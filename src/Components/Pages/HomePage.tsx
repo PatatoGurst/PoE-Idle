@@ -1,15 +1,26 @@
-type HomePageType = {
-  value: number;
-  updateIncrement: () => void;
-};
+import { connect, useDispatch } from 'react-redux';
+import * as testActions from '../../Redux/Actions/ClickAction';
 
-function HomePage(props: HomePageType) {
+function HomePage(props: any) {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h1>Home Page {props.value}</h1>
-      <button onClick={() => props.updateIncrement()}>+1 / s</button>
+      <button
+        onClick={() => {
+          dispatch(testActions.updateIncrement(1));
+        }}>
+        +1
+      </button>
     </div>
   );
 }
 
-export default HomePage;
+const mapStateToProps = (state: any) => {
+  return {
+    value: state.clicks.totalValue,
+  };
+};
+
+export default connect(mapStateToProps)(HomePage);

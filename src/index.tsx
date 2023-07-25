@@ -4,13 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { defaultGameState } from './GameState';
+import ConfigureGameStore from './Redux/ConfigureGameStore';
+import { Provider as ReduxProvider } from 'react-redux';
 
+const store = ConfigureGameStore({});
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='/PoE-Idle'>
-      <App />
-    </BrowserRouter>
+    <ReduxProvider store={store}>
+      <BrowserRouter basename='/PoE-Idle'>
+        <App />
+      </BrowserRouter>
+    </ReduxProvider>
   </React.StrictMode>,
 );
 

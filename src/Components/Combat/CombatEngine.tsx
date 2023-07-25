@@ -1,17 +1,14 @@
+import { connect, useDispatch } from 'react-redux';
+import * as testActions from '../../Redux/Actions/ClickAction';
 import { useEffect, useState } from 'react';
-
-type dataCombatEngineType = {
-  value: number;
-  increment: number;
-  setValue: (v: number) => void;
-};
 
 const CLOCK_CYCLE: number = 1000;
 const CLOCK_TICK: number = 50;
 
-function CombatEngine(props: dataCombatEngineType) {
+function CombatEngine(props: any) {
   const [time, setTime] = useState(Date.now());
   const [clock, setClock] = useState(0);
+  const dispatch = useDispatch();
   useEffect(() => {
     const delta = Date.now() - time;
     let newClock = clock + delta;
@@ -19,16 +16,22 @@ function CombatEngine(props: dataCombatEngineType) {
       if (newClock >= CLOCK_CYCLE) {
         newClock -= CLOCK_CYCLE;
         if (props.value < 200000) {
-          props.setValue(props.value + props.increment);
+          dispatch(testActions.increment());
         }
       }
       setClock(newClock);
     }, CLOCK_TICK);
     setTime(Date.now());
     return () => clearTimeout(toto);
-  }, [props, clock]);
+  }, [props, clock, dispatch]);
 
   return <></>;
 }
 
-export default CombatEngine;
+const mapStateToProps = (state: any) => {
+  return {
+    value: state.clicks.totalValue,
+  };
+};
+
+export default connect(mapStateToProps)(CombatEngine);
