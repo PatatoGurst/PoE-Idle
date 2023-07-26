@@ -62,7 +62,6 @@ function HexagonGrid() {
         stroke='red'
         strokeWidth={1}
       />
-      <Line points={[0, 0, 30, 0]} stroke='green' />
     </>
   );
 }
