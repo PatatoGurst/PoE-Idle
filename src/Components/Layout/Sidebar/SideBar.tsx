@@ -14,6 +14,9 @@ function SideBar({ isOpened }: SideBarInterface) {
             <Link to='/'>Home</Link>
           </li>
           <li>
+            <Link to='/map'>Map</Link>
+          </li>
+          <li>
             <Link to='/page1'>Page 1</Link>
           </li>
           <li>
