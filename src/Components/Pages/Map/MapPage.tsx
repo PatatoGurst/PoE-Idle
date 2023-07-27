@@ -4,6 +4,7 @@ import { Layer, Stage } from 'react-konva';
 import './MapPage.css';
 import HexagonGrid from './HexagonGrid';
 import { Hexagon, computeHexagons } from './MapUtils';
+import SideMap from './SideMap';
 
 function MapPage() {
   const divRef = React.useRef<HTMLInputElement>(null);
@@ -28,10 +29,17 @@ function MapPage() {
     setHexagonGrid([...hexagonGrid]);
   };
 
+  const clickOnTile = (i: number, j: number) => {
+    hexagonGrid[i][j].color = 'yellow';
+    updateGrid();
+  };
+
   return (
-    <div className='map-container' ref={divRef}>
-      <div> test </div>
-      <div className='map'>
+    <div className='map-container'>
+      <div className='side'>
+        <SideMap clickOnTile={clickOnTile} />
+      </div>
+      <div className='map' ref={divRef}>
         <Stage
           width={dimensions.width}
           height={dimensions.height}
