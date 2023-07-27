@@ -1,18 +1,13 @@
-import Konva from 'konva';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { Layer, Stage, Rect, Text } from 'react-konva';
+import { Layer, Stage } from 'react-konva';
 import './MapPage.css';
 import HexagonGrid from './HexagonGrid';
+import { Hexagon, computeHexagons } from './MapUtils';
 
 function MapPage() {
-  const [color, setColor] = useState('green');
-
-  const handleClick = () => {
-    setColor(Konva.Util.getRandomColor());
-  };
-
   const divRef = React.useRef<HTMLInputElement>(null);
+  const [hexagonGrid, setHexagonGrid] = useState<Hexagon[][]>(computeHexagons(8, 5));
   const [dimensions, setDimensions] = useState({
     width: 0,
     height: 0,
@@ -29,6 +24,10 @@ function MapPage() {
     }
   }, []);
 
+  const updateGrid = () => {
+    setHexagonGrid([...hexagonGrid]);
+  };
+
   return (
     <div className='map-container' ref={divRef}>
       <div> test </div>
@@ -39,7 +38,7 @@ function MapPage() {
           offsetX={-dimensions.width / 2}
           offsetY={-dimensions.height / 2}>
           <Layer>
-            <HexagonGrid />
+            <HexagonGrid grid={hexagonGrid} updateGrid={() => updateGrid()} />
           </Layer>
         </Stage>
       </div>
