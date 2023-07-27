@@ -7,8 +7,14 @@ import { Hexagon, Tile, computeHexagons } from './MapUtils';
 import SideMap from './SideMap';
 
 function MapPage() {
+  const HALF_WIDTH = 8;
+  const HALF_HEIGHT = 5;
+  const WIDTH = HALF_WIDTH * 2 + 1;
+  const HEIGHT = HALF_HEIGHT * 2 + 1;
   const divRef = React.useRef<HTMLInputElement>(null);
-  const [hexagonGrid, setHexagonGrid] = useState<Hexagon[][]>(computeHexagons(8, 5));
+  const [hexagonGrid, setHexagonGrid] = useState<Hexagon[][]>(
+    computeHexagons(HALF_WIDTH, HALF_HEIGHT),
+  );
   const [dimensions, setDimensions] = useState({
     width: 0,
     height: 0,
@@ -40,10 +46,16 @@ function MapPage() {
     });
   };
 
+  const showRadius = (i: number, j: number, radius: number) => {
+    colorTiles([{ x: i, y: j }], 'rgba(50,200,100,1)');
+    updateGrid();
+    // Rien pour le moment
+  };
+
   return (
     <div className='map-container'>
       <div className='side'>
-        <SideMap clickOnTile={clickOnTile} />
+        <SideMap clickOnTile={clickOnTile} showRadius={showRadius} />
       </div>
       <div className='map' ref={divRef}>
         <Stage
