@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Layer, Stage } from 'react-konva';
 import './MapPage.css';
 import HexagonGrid from './HexagonGrid';
-import { Hexagon, computeHexagons } from './MapUtils';
+import { Hexagon, Tile, computeHexagons } from './MapUtils';
 import SideMap from './SideMap';
 
 function MapPage() {
@@ -30,8 +30,14 @@ function MapPage() {
   };
 
   const clickOnTile = (i: number, j: number) => {
-    hexagonGrid[i][j].color = 'yellow';
+    colorTiles([{ x: i, y: j }], 'yellow');
     updateGrid();
+  };
+
+  const colorTiles = (tiles: Tile[], color: string = 'pink') => {
+    tiles.forEach((t: Tile) => {
+      hexagonGrid[t.x][t.y].color = color;
+    });
   };
 
   return (

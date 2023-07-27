@@ -5,6 +5,11 @@ type Hexagon = {
   color: string;
 };
 
+type Tile = {
+  x: number;
+  y: number;
+};
+
 const RADIUS = 40;
 const diffX = Math.ceil(Math.sqrt(3 * RADIUS * RADIUS));
 const diffY = (RADIUS * 3) / 2;
@@ -33,5 +38,5 @@ const computeHexagons = (width: number, height: number) => {
   return hexagonGrid;
 };
 
-export type { Hexagon };
+export type { Hexagon, Tile };
 export { computeHexagons };
