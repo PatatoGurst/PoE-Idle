@@ -1,7 +1,7 @@
 import HexagonTile from './HexagonTile';
 import { Hexagon } from './MapUtils';
 
-function HexagonGrid(props: { grid: Hexagon[][]; updateGrid: () => void }) {
+function HexagonGrid(props: { grid: any; updateGrid: () => void }) {
   const mouseEnter = (h: Hexagon) => {
     h.color = 'blue';
     props.updateGrid();
@@ -19,11 +19,15 @@ function HexagonGrid(props: { grid: Hexagon[][]; updateGrid: () => void }) {
 
   return (
     <>
-      {props.grid.map((line) => {
-        return line.map((hexagon) => {
+      {Object.keys(props.grid).map((lineKey: string) => {
+        const line: any = props.grid[lineKey];
+        return Object.keys(line).map((hexagonKey) => {
+          const hexagon: Hexagon = line[hexagonKey];
           return (
             <HexagonTile
               tile={hexagon}
+              i={lineKey}
+              j={hexagonKey}
               mouseEnter={() => mouseEnter(hexagon)}
               mouseLeave={() => mouseLeave(hexagon)}
               onClick={() => onClick(hexagon)}

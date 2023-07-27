@@ -3,18 +3,12 @@ import { useEffect, useState } from 'react';
 import { Layer, Stage } from 'react-konva';
 import './MapPage.css';
 import HexagonGrid from './HexagonGrid';
-import { Hexagon, Tile, computeHexagons } from './MapUtils';
+import { Tile, computeHexagons, HALF_WIDTH, HALF_HEIGHT } from './MapUtils';
 import SideMap from './SideMap';
 
 function MapPage() {
-  const HALF_WIDTH = 8;
-  const HALF_HEIGHT = 5;
-  const WIDTH = HALF_WIDTH * 2 + 1;
-  const HEIGHT = HALF_HEIGHT * 2 + 1;
   const divRef = React.useRef<HTMLInputElement>(null);
-  const [hexagonGrid, setHexagonGrid] = useState<Hexagon[][]>(
-    computeHexagons(HALF_WIDTH, HALF_HEIGHT),
-  );
+  const [hexagonGrid, setHexagonGrid] = useState<any>(computeHexagons(HALF_WIDTH, HALF_HEIGHT));
   const [dimensions, setDimensions] = useState({
     width: 0,
     height: 0,
@@ -32,7 +26,7 @@ function MapPage() {
   }, []);
 
   const updateGrid = () => {
-    setHexagonGrid([...hexagonGrid]);
+    setHexagonGrid({ ...hexagonGrid });
   };
 
   const clickOnTile = (i: number, j: number) => {

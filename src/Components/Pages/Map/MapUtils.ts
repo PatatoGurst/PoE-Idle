@@ -13,30 +13,40 @@ type Tile = {
 const RADIUS = 40;
 const diffX = Math.ceil(Math.sqrt(3 * RADIUS * RADIUS));
 const diffY = (RADIUS * 3) / 2;
+const HALF_WIDTH = 5;
+const HALF_HEIGHT = 5;
+
+const tileWidth: Tile = {
+  x: diffX,
+  y: 0,
+};
+
+const tileHeight: Tile = {
+  x: -diffX / 2,
+  y: -diffY,
+};
 
 const computeHexagons = (width: number, height: number) => {
-  let hexagonGrid: Hexagon[][] = [];
+  let hexagonGrid: any = {};
   for (let i = -height; i <= height; ++i) {
-    const lineY = i * diffY;
-    let hexagonLine: Hexagon[] = [];
-    for (let j = -width; j <= width; ++j) {
+    let hexagonLine: any = {};
+    for (
+      let j = -width - Math.round((height - i) / 2);
+      j <= width + Math.round((i + height) / 2);
+      ++j
+    ) {
       let hexagonTile: Hexagon = {
-        x: 0,
-        y: lineY,
+        x: j * tileWidth.x + i * tileHeight.x,
+        y: j * tileWidth.y + i * tileHeight.y,
         radius: RADIUS,
         color: 'black',
       };
-      if (i % 2 === 0) {
-        hexagonTile.x = j * diffX;
-      } else {
-        hexagonTile.x = j * diffX + diffX / 2;
-      }
-      hexagonLine[j + width] = hexagonTile;
+      hexagonLine[j] = hexagonTile;
     }
-    hexagonGrid[i + height] = hexagonLine;
+    hexagonGrid[i] = hexagonLine;
   }
   return hexagonGrid;
 };
 
 export type { Hexagon, Tile };
-export { computeHexagons };
+export { HALF_WIDTH, HALF_HEIGHT, computeHexagons };
