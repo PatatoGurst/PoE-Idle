@@ -7,18 +7,13 @@ import SideBar from './Components/Layout/Sidebar/SideBar';
 import PoEIdleGame from './Components/PoEIdleGame';
 
 function App() {
-  const [value, setValue] = useState(0);
-  const [increment, setIncrement] = useState(1);
-
-  const updateIncrement = (newIncrement: number) => setIncrement(increment + newIncrement);
-
   return (
     <div id='App'>
       <Header />
       <SideBar />
       <div id='main'>
-        <CombatEngine value={value} setValue={setValue} increment={increment} />
-        <PoEIdleGame value={value} updateIncrement={updateIncrement} />
+        <CombatEngine />
+        <PoEIdleGame />
       </div>
       <Footer />
     </div>

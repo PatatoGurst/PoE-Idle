@@ -1,5 +1,3 @@
-import GameState, { defaultGameState } from '../../GameState';
-
 type clickType = {
   totalValue: number;
   increment: number;
@@ -15,6 +13,8 @@ export default function clickReducer(state: clickType = defaultClickType, action
       return { ...state, totalValue: state.totalValue + state.increment };
     case 'UPDATE_INCREMENT':
       return { ...state, increment: state.increment + action.value };
+    case 'RESET':
+      return { ...state, totalValue: 0 };
     default:
       return state;
   }

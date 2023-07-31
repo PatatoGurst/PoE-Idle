@@ -4,11 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { defaultGameState } from './GameState';
-import ConfigureGameStore from './Redux/ConfigureGameStore';
+import { store } from './Redux/Store';
 import { Provider as ReduxProvider } from 'react-redux';
+import { saveState } from './Redux/State';
+import { debounce } from 'debounce';
 
-const store = ConfigureGameStore({});
+store.subscribe(
+  debounce(() => {
+    saveState(store.getState());
+  }, 800),
+);
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>

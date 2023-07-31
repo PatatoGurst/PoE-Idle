@@ -5,3 +5,7 @@ export function increment() {
 export function updateIncrement(value: number) {
   return { type: 'UPDATE_INCREMENT', value };
 }
+
+export function reset() {
+  return { type: 'RESET', value: undefined };
+}
