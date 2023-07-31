@@ -60,6 +60,7 @@
     ]
   },
   "devDependencies": {
+    "@types/debounce": "^1.2.1",
     "@types/redux-immutable-state-invariant": "^2.1.2",
     "gh-pages": "^5.0.0",
     "redux-devtools-extension": "^2.13.9"
