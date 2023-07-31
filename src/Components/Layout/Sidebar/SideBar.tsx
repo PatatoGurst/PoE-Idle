@@ -1,13 +1,9 @@
 import { Link } from 'react-router-dom';
 import './SideBar.css';
 
-interface SideBarInterface {
-  isOpened: boolean;
-}
-
-function SideBar({ isOpened }: SideBarInterface) {
+function SideBar() {
   return (
-    <aside className={`${isOpened ? 'opened' : 'closed'} drawer`}>
+    <div id='side'>
       <nav>
         <ul>
           <li>
@@ -24,7 +20,7 @@ function SideBar({ isOpened }: SideBarInterface) {
           </li>
         </ul>
       </nav>
-    </aside>
+    </div>
   );
 }
 

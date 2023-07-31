@@ -1,7 +1,5 @@
-.header {
-  display: flex;
+#header {
   background: #00022e;
-  height: 100px;
   align-items: center;
   justify-content: center;
   color: #fc86aa;

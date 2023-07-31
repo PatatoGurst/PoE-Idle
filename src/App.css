@@ -1,17 +1,30 @@
-.App {
+#App {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    'header header '
+    'side content'
+    'footer footer';
+  grid-template-columns: 10% 90%;
+  grid-template-rows: 10% 85% 5%;
   color: #000133;
+  width: 100vw;
+  height: 100vh;
 }
 
-.main {
-  flex: 1;
+#main {
   background: #f7f5f5;
+  grid-area: content;
 }
 
-.container {
-  display: flex;
-  flex: 1;
+#side {
+  grid-area: side;
+}
+
+#header {
+  grid-area: header;
+}
+
+#footer {
+  grid-area: footer;
 }

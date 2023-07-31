@@ -1,17 +1,11 @@
-import { Menu as MenuIcon, ChevronLeft as ChevronLeftIcon } from '@mui/icons-material';
 import './Header.css';
 
-interface HeaderInterface {
-  sideBarIsOpened: boolean;
-  toggleSideBar: () => void;
-}
-
-function Header({ sideBarIsOpened, toggleSideBar }: HeaderInterface) {
+function Header() {
   return (
-    <div className='header'>
+    <div id='header'>
       <div className='header-title'>
         <h3>Path of Ex-Idle</h3>
-        <h4>An idle game based on Path of Exile</h4>
+        <p>An idle game based on Path of Exile</p>
       </div>
     </div>
   );

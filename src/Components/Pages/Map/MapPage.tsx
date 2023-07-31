@@ -48,10 +48,10 @@ function MapPage() {
 
   return (
     <div className='map-container'>
-      <div className='side'>
+      <div className='side column'>
         <SideMap clickOnTile={clickOnTile} showRadius={showRadius} />
       </div>
-      <div className='map' ref={divRef}>
+      <div className='map column' ref={divRef}>
         <Stage
           width={dimensions.width}
           height={dimensions.height}

@@ -10,6 +10,9 @@
 }
 
 .side {
-  width: 300px;
-  float: left;
+  background-color: rgba(158, 42, 42, 0.5);
+}
+
+.column {
+  width: fit-content;
 }
