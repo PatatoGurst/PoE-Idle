@@ -16,6 +16,7 @@ function HexagonTile(props: {
         x={props.tile.x}
         y={props.tile.y}
         radius={props.tile.radius}
+        rotation={30}
         fill={props.tile.color}
         stroke='red'
         strokeWidth={1}

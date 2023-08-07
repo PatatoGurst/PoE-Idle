@@ -3,12 +3,14 @@ import { useEffect, useState } from 'react';
 import { Layer, Stage } from 'react-konva';
 import './MapPage.css';
 import HexagonGrid from './HexagonGrid';
-import { Tile, computeHexagons, HALF_WIDTH, HALF_HEIGHT } from './MapUtils';
+import { Tile, rectanglemap, hexagonemap, custommap, map1, HALF_HEIGHT } from './MapUtils';
 import SideMap from './SideMap';
 
 function MapPage() {
   const divRef = React.useRef<HTMLInputElement>(null);
-  const [hexagonGrid, setHexagonGrid] = useState<any>(computeHexagons(HALF_WIDTH, HALF_HEIGHT));
+  //const [hexagonGrid, setHexagonGrid] = useState<any>(rectanglemap(HALF_HEIGHT));
+  //const [hexagonGrid, setHexagonGrid] = useState<any>(hexagonemap(HALF_HEIGHT));
+  const [hexagonGrid, setHexagonGrid] = useState<any>(custommap(map1, HALF_HEIGHT));
   const [dimensions, setDimensions] = useState({
     width: 0,
     height: 0,
