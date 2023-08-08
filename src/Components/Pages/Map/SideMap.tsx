@@ -3,6 +3,7 @@ import { useState } from 'react';
 type SideMapType = {
   clickOnTile: (i: number, j: number) => void;
   showRadius: (i: number, j: number, radius: number) => void;
+  resetMap: () => void;
 };
 
 function SideMap(props: SideMapType) {
@@ -30,6 +31,10 @@ function SideMap(props: SideMapType) {
     props.showRadius(i, j, radius);
   };
 
+  const resetMap = () => {
+    props.resetMap();
+  }
+
   return (
     <>
       <p>
@@ -46,6 +51,9 @@ function SideMap(props: SideMapType) {
       </p>
       <p>
         <button onClick={showRadius}>see Area</button>
+      </p>
+      <p>
+        <button onClick={resetMap}>reset map</button>
       </p>
     </>
   );

@@ -3,6 +3,11 @@ type Hexagon = {
   y: number;
   radius: number;
   color: string;
+  i: number;
+  j: number;
+  a: number;
+  b: number;
+  token: boolean;
 };
 
 type Tile = {
@@ -55,6 +60,11 @@ const rectanglemap = (halfheight: number) => {
           y: j * tileWidth.y + i * tileHeight.y,
           radius: RADIUS,
           color: 'black',
+          i: i,
+          j: j,
+          a: i,
+          b: j,
+          token: true,
         }
         hexagonLine[j] = hexagonTile;
       };
@@ -75,6 +85,11 @@ const custommap = (map: Array<Array<number>>, halfheight: number) => {
           y: j * tileWidth.y + i * tileHeight.y,
           radius: RADIUS,
           color: 'black',
+          i: i,
+          j: j,
+          a: i,
+          b: j,
+          token: true,
         }
         hexagonLine[j] = hexagonTile;
       };
@@ -95,6 +110,11 @@ const hexagonemap = (halfheight: number) => {
           y: j * tileWidth.y + i * tileHeight.y,
           radius: RADIUS,
           color: 'black',
+          i: i,
+          j: j,
+          a: i,
+          b: j,
+          token: true,
         }
         hexagonLine[j] = hexagonTile;
       };

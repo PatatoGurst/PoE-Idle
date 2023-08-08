@@ -3,8 +3,6 @@ import { Hexagon } from './MapUtils';
 
 function HexagonTile(props: {
   tile: Hexagon;
-  i: string;
-  j: string;
   mouseEnter: (h: Hexagon) => void;
   mouseLeave: (h: Hexagon) => void;
   onClick: (h: Hexagon) => void;
@@ -25,12 +23,12 @@ function HexagonTile(props: {
         onClick={() => props.onClick(props.tile)}
       />
       <Text
-        text={props.i + ' | ' + props.j}
+        text={props.tile.a + ' | ' + props.tile.b}
         x={props.tile.x}
         y={props.tile.y}
         stroke='white'
         strokeWidth={1}
-        offsetX={3 * (props.i + props.j).length}
+        offsetX={3 * (props.tile.a.toString() + props.tile.b.toString()).length}
       />
     </>
   );
