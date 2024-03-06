@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { updateIncrement } from '../../Redux/Reducers/ClickSlice';
+import GlobalState from '../../Redux/Model/GlobalState';
 
 export default function HomePage() {
-  const value = useSelector((state: any) => state.clicks.totalValue);
+  const value = useSelector((state: GlobalState) => state.click.totalValue);
   const dispatch = useDispatch();
 
   return (

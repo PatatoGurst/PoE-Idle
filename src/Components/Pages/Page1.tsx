@@ -1,7 +1,7 @@
-import { connect, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateIncrement } from '../../Redux/Reducers/ClickSlice';
 
-function Page1() {
+export default function Page1() {
   const dispatch = useDispatch();
 
   return (
@@ -11,5 +11,3 @@ function Page1() {
     </div>
   );
 }
-
-export default connect()(Page1);
