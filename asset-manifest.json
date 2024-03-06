@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/PoE-Idle/static/css/main.43476302.css",
-    "main.js": "/PoE-Idle/static/js/main.b0f0c513.js",
+    "main.js": "/PoE-Idle/static/js/main.a5fb36c1.js",
     "static/js/787.7cd47787.chunk.js": "/PoE-Idle/static/js/787.7cd47787.chunk.js",
     "index.html": "/PoE-Idle/index.html",
     "main.43476302.css.map": "/PoE-Idle/static/css/main.43476302.css.map",
-    "main.b0f0c513.js.map": "/PoE-Idle/static/js/main.b0f0c513.js.map",
+    "main.a5fb36c1.js.map": "/PoE-Idle/static/js/main.a5fb36c1.js.map",
     "787.7cd47787.chunk.js.map": "/PoE-Idle/static/js/787.7cd47787.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43476302.css",
-    "static/js/main.b0f0c513.js"
+    "static/js/main.a5fb36c1.js"
   ]
 }
