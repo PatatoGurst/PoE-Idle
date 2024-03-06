@@ -1,5 +1,5 @@
 import { connect, useDispatch } from 'react-redux';
-import * as testActions from '../../Redux/Actions/ClickAction';
+import { updateIncrement } from '../../Redux/Reducers/ClickSlice';
 
 function Page1() {
   const dispatch = useDispatch();
@@ -7,7 +7,7 @@ function Page1() {
   return (
     <div>
       <h1>Page 1</h1>
-      <button onClick={() => dispatch(testActions.updateIncrement(2))}>+2</button>
+      <button onClick={() => dispatch(updateIncrement(2))}>+2</button>
     </div>
   );
 }

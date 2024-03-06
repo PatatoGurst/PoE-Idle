@@ -1,26 +1,19 @@
-import { connect, useDispatch } from 'react-redux';
-import * as testActions from '../../Redux/Actions/ClickAction';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateIncrement } from '../../Redux/Reducers/ClickSlice';
 
-function HomePage(props: any) {
+export default function HomePage() {
+  const value = useSelector((state: any) => state.clicks.totalValue);
   const dispatch = useDispatch();
 
   return (
     <div>
-      <h1>Home Page {props.value}</h1>
+      <h1>Home Page {value}</h1>
       <button
         onClick={() => {
-          dispatch(testActions.updateIncrement(1));
+          dispatch(updateIncrement(1));
         }}>
         +1
       </button>
     </div>
   );
 }
-
-const mapStateToProps = (state: any) => {
-  return {
-    value: state.clicks.totalValue,
-  };
-};
-
-export default connect(mapStateToProps)(HomePage);

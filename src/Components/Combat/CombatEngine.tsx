@@ -1,6 +1,6 @@
 import { connect, useDispatch } from 'react-redux';
-import * as testActions from '../../Redux/Actions/ClickAction';
 import { useEffect, useState } from 'react';
+import { increment } from '../../Redux/Reducers/ClickSlice';
 
 const CLOCK_CYCLE: number = 1000;
 const CLOCK_TICK: number = 50;
@@ -16,7 +16,7 @@ function CombatEngine(props: any) {
       if (newClock >= CLOCK_CYCLE) {
         newClock -= CLOCK_CYCLE;
         if (props.value < 200000) {
-          dispatch(testActions.increment());
+          dispatch(increment());
         }
       }
       setClock(newClock);
