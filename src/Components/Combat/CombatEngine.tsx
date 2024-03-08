@@ -1,6 +1,6 @@
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { increment } from '../../Redux/Reducers/ClickSlice';
+import { addExperience } from '../../Redux/Reducers/CharacterSlice';
 import GlobalState from '../../Redux/Model/GlobalState';
 
 const CLOCK_CYCLE: number = 1000;
@@ -11,6 +11,7 @@ export default function CombatEngine() {
   const [clock, setClock] = useState(0);
   const dispatch = useDispatch();
   const value = useSelector((state: GlobalState) => state.click.totalValue);
+  const incrementValue = useSelector((state: GlobalState) => state.click.increment);
 
   useEffect(() => {
     const delta = Date.now() - time;
@@ -19,7 +20,7 @@ export default function CombatEngine() {
       if (newClock >= CLOCK_CYCLE) {
         newClock -= CLOCK_CYCLE;
         if (value < 200000) {
-          dispatch(increment());
+          dispatch(addExperience(incrementValue));
         }
       }
       setClock(newClock);

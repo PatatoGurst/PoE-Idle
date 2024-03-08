@@ -12,5 +12,5 @@ export const store = configureStore({
     inventory: inventoryReducer,
   },
   // here we restore the previously persisted state
-  preloadedState: loadState(),
+  // preloadedState: loadState(),
 });

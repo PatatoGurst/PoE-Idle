@@ -1,3 +1,5 @@
+import GlobalState from './Model/GlobalState';
+
 const KEY = 'gameData';
 export function loadState() {
   try {
@@ -9,7 +11,7 @@ export function loadState() {
   }
 }
 
-export async function saveState(state: any) {
+export async function saveState(state: GlobalState) {
   try {
     const serializedState = JSON.stringify(state);
     localStorage.setItem(KEY, serializedState);
