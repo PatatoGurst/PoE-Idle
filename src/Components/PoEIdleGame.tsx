@@ -3,7 +3,7 @@ import { ROUTES } from './Constants/Routes';
 import HomePage from './Pages/HomePage';
 import Page1 from './Pages/Page1';
 import Inventory from './Pages/Inventory';
-import MapPage from './Pages/Map/MapPage';
+import MapPage from './Pages/MapPage';
 
 function PoEIdleGame() {
   return (

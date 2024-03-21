@@ -4,7 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { store } from './Redux/Store';
 import { Provider as ReduxProvider } from 'react-redux';
 import { saveState } from './Redux/State';
@@ -20,9 +20,9 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <ReduxProvider store={store}>
-      <BrowserRouter basename='/PoE-Idle'>
+      <MemoryRouter>
         <App />
-      </BrowserRouter>
+      </MemoryRouter>
     </ReduxProvider>
   </React.StrictMode>,
 );
