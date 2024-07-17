@@ -5,28 +5,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MemoryRouter } from 'react-router-dom';
-import { store } from './Redux/Store';
-import { Provider as ReduxProvider } from 'react-redux';
-import { saveState } from './Redux/State';
-import { debounce } from 'debounce';
 import { GameStateProvider } from './Providers/GameStateProvider';
-
-store.subscribe(
-  debounce(() => {
-    saveState(store.getState());
-  }, 900),
-);
+import { TimerProvider } from './Providers/TimerProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <ReduxProvider store={store}>
+    <TimerProvider>
       <GameStateProvider>
         <MemoryRouter>
           <App />
         </MemoryRouter>
       </GameStateProvider>
-    </ReduxProvider>
+    </TimerProvider>
   </React.StrictMode>,
 );
 

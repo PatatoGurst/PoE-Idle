@@ -1,5 +1,3 @@
-import { reset } from '../../Redux/Reducers/ClickSlice';
-import { updateCurrency } from '../../Redux/Reducers/InventorySlice';
 import { useContext } from 'react';
 import { GameState } from '../../Providers/GameStateProvider';
 

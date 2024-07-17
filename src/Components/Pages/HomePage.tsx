@@ -1,30 +1,22 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { updateIncrement } from '../../Redux/Reducers/ClickSlice';
-import GlobalState from '../../Redux/Model/GlobalState';
 import { useContext } from 'react';
 import { GameState } from '../../Providers/GameStateProvider';
+import { Timer } from '../../Providers/TimerProvider';
 
 export default function HomePage() {
-  const value = useSelector((state: GlobalState) => state.click.totalValue);
-  const dispatch = useDispatch();
   const {
     character: { updateCharacter },
   } = useContext(GameState);
 
+  const { timer } = useContext(Timer);
+
   return (
     <div>
-      <h1>Home Page {value}</h1>
-      <button
-        onClick={() => {
-          dispatch(updateIncrement(1));
-        }}>
-        +1
-      </button>
+      <h1>Home Page + {timer}</h1>
       <button
         onClick={() => {
           updateCharacter.addExperience(150);
         }}>
-        +1
+        Add exp
       </button>
     </div>
   );

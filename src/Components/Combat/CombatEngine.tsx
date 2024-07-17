@@ -1,33 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { addExperience } from '../../Redux/Reducers/CharacterSlice';
-import GlobalState from '../../Redux/Model/GlobalState';
-
-const CLOCK_CYCLE: number = 1000;
-const CLOCK_TICK: number = 50;
+import { useContext, useEffect } from 'react';
+import { Timer } from '../../Providers/TimerProvider';
+import { GameState } from '../../Providers/GameStateProvider';
 
 export default function CombatEngine() {
-  const [time, setTime] = useState(Date.now());
-  const [clock, setClock] = useState(0);
-  const dispatch = useDispatch();
-  const value = useSelector((state: GlobalState) => state.click.totalValue);
-  const incrementValue = useSelector((state: GlobalState) => state.click.increment);
+  const { timer } = useContext(Timer);
+  const {
+    character: { updateCharacter },
+  } = useContext(GameState);
 
   useEffect(() => {
-    const delta = Date.now() - time;
-    let newClock = clock + delta;
-    const toto = setTimeout(() => {
-      if (newClock >= CLOCK_CYCLE) {
-        newClock -= CLOCK_CYCLE;
-        if (value < 200000) {
-          dispatch(addExperience(incrementValue));
-        }
-      }
-      setClock(newClock);
-    }, CLOCK_TICK);
-    setTime(Date.now());
-    return () => clearTimeout(toto);
-  }, [clock]);
+    if (timer % 20 === 0) {
+      updateCharacter.addExperience(132);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [timer]);
 
   return <></>;
 }
