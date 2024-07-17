@@ -9,6 +9,7 @@ import { store } from './Redux/Store';
 import { Provider as ReduxProvider } from 'react-redux';
 import { saveState } from './Redux/State';
 import { debounce } from 'debounce';
+import { GameStateProvider } from './Providers/GameStateProvider';
 
 store.subscribe(
   debounce(() => {
@@ -20,9 +21,11 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <ReduxProvider store={store}>
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
+      <GameStateProvider>
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      </GameStateProvider>
     </ReduxProvider>
   </React.StrictMode>,
 );

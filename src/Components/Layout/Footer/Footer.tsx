@@ -1,10 +1,12 @@
-import { useSelector } from 'react-redux';
 import './Footer.css';
-import GlobalState from '../../../Redux/Model/GlobalState';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import { useContext } from 'react';
+import { GameState } from '../../../Providers/GameStateProvider';
 
 function Footer() {
-  const character = useSelector((state: GlobalState) => state.character);
+  const {
+    character: { character },
+  } = useContext(GameState);
 
   return (
     <div id='footer'>

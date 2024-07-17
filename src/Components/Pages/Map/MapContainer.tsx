@@ -5,8 +5,8 @@ import './MapContainer.css';
 import HexagonGrid from './HexagonGrid';
 import { Hexagon, Tile, createRectangleMap, hexagonemap, custommap, HALF_HEIGHT } from './MapUtils';
 import SideMap from './SideMap';
-import Map from '@Models/Map';
 import { map1 } from './Custom/map1';
+import Map from '@Models/Map';
 
 function MapContainer() {
   const divRef = React.useRef<HTMLInputElement>(null);

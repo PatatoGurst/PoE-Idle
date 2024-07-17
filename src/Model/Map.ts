@@ -1,5 +1,5 @@
-import Monster from '@Models/Monster';
-import Player from '@Models/Player';
+import Monster from './Monster';
+import Player from './Player';
 
 export default interface Map {
   monsters: Monster[];
