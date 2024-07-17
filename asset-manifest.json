@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PoE-Idle/static/css/main.171d2726.css",
-    "main.js": "/PoE-Idle/static/js/main.001b50eb.js",
-    "static/js/787.7cd47787.chunk.js": "/PoE-Idle/static/js/787.7cd47787.chunk.js",
+    "main.css": "/PoE-Idle/static/css/main.75d1fcd6.css",
+    "main.js": "/PoE-Idle/static/js/main.38515731.js",
+    "static/js/453.65c9989c.chunk.js": "/PoE-Idle/static/js/453.65c9989c.chunk.js",
     "index.html": "/PoE-Idle/index.html",
-    "main.171d2726.css.map": "/PoE-Idle/static/css/main.171d2726.css.map",
-    "main.001b50eb.js.map": "/PoE-Idle/static/js/main.001b50eb.js.map",
-    "787.7cd47787.chunk.js.map": "/PoE-Idle/static/js/787.7cd47787.chunk.js.map"
+    "main.75d1fcd6.css.map": "/PoE-Idle/static/css/main.75d1fcd6.css.map",
+    "main.38515731.js.map": "/PoE-Idle/static/js/main.38515731.js.map",
+    "453.65c9989c.chunk.js.map": "/PoE-Idle/static/js/453.65c9989c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.171d2726.css",
-    "static/js/main.001b50eb.js"
+    "static/css/main.75d1fcd6.css",
+    "static/js/main.38515731.js"
   ]
 }
