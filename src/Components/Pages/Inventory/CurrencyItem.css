@@ -1,0 +1,19 @@
+.currency-item-container {
+  position: relative;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+
+.currency-item-image {
+  width: 100%;
+}
+
+.currency-item-amount {
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}

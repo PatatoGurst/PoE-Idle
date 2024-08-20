@@ -1,0 +1,20 @@
+#inventory-page {
+  display: grid;
+  grid-template-areas:
+    'inventory-title inventory-title'
+    'inventory-currency inventory-actions';
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 90%;
+}
+
+#inventory-title {
+  grid-area: inventory-title;
+}
+
+#inventory-currency {
+  grid-area: inventory-currency;
+}
+
+#inventory-actions {
+  grid-area: inventory-actions;
+}

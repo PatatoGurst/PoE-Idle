@@ -13,7 +13,8 @@
 }
 
 #main {
-  background: #f7f5f5;
+  background: #08092f;
+  color: #fc86aa;
   grid-area: content;
 }
 
