@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import IInventoryState from '@Models/State/IInventoryState';
+import IInventoryState from '@Models/Inventory/IInventoryState';
 
 export default function useInventory(): IInventoryState {
   const [transmutation, setTransmutation] = useState(0);

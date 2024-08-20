@@ -1,5 +1,5 @@
-import Character from './Character';
-import Inventory from './Inventory';
+import Character from './Character/Character';
+import Inventory from './Inventory/Inventory';
 
 export default interface Game {
   timer: number;

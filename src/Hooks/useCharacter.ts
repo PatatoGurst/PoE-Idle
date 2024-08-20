@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { calculateExperienceNextLevel } from '../Utils/Character/Experience.utils';
-import ICharacterState from '@Models/State/ICharacterState';
+import ICharacterState from '@Models/Character/ICharacterState';
 
 export default function useCharacter(): ICharacterState {
   const [name, setName] = useState('Unamed Exile');
