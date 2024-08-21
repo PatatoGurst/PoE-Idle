@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { calculateExperienceNextLevel } from '../Utils/Character/Experience.utils';
 import ICharacterState from '@Models/Character/ICharacterState';
+import useInventory from './useInventory';
 
 export default function useCharacter(): ICharacterState {
   const [name, setName] = useState('Unamed Exile');
   const [level, setLevel] = useState(0);
   const [experience, setExperience] = useState(0);
   const [experienceLevelUp, setExperienceLevelUp] = useState(0);
+
+  const inventory = useInventory();
 
   const changeName = (newName: string) => {
     setName(newName);

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-areas:
     'inventory-title inventory-title'
-    'inventory-currency inventory-actions';
+    'inventory-currency inventory-grid';
   grid-template-columns: 50% 50%;
   grid-template-rows: 10% 90%;
 }
@@ -15,6 +15,14 @@
   grid-area: inventory-currency;
 }
 
-#inventory-actions {
-  grid-area: inventory-actions;
+#inventory-grid {
+  grid-area: inventory-grid;
+}
+
+.inventory-grid-cell {
+  width: 60px;
+  height: 60px;
+  border: solid 2px #33291d;
+  background-color: #070707;
+  padding: 0px;
 }
