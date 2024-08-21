@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/PoE-Idle/static/css/main.c409bfbc.css",
-    "main.js": "/PoE-Idle/static/js/main.22636c7a.js",
+    "main.css": "/PoE-Idle/static/css/main.349c4752.css",
+    "main.js": "/PoE-Idle/static/js/main.92716e11.js",
     "static/js/453.65c9989c.chunk.js": "/PoE-Idle/static/js/453.65c9989c.chunk.js",
     "static/media/alteration.png": "/PoE-Idle/static/media/alteration.fe059584c97272c95200.png",
     "static/media/transmutation.png": "/PoE-Idle/static/media/transmutation.93dccd217833ea851160.png",
     "index.html": "/PoE-Idle/index.html",
-    "main.c409bfbc.css.map": "/PoE-Idle/static/css/main.c409bfbc.css.map",
-    "main.22636c7a.js.map": "/PoE-Idle/static/js/main.22636c7a.js.map",
+    "main.349c4752.css.map": "/PoE-Idle/static/css/main.349c4752.css.map",
+    "main.92716e11.js.map": "/PoE-Idle/static/js/main.92716e11.js.map",
     "453.65c9989c.chunk.js.map": "/PoE-Idle/static/js/453.65c9989c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c409bfbc.css",
-    "static/js/main.22636c7a.js"
+    "static/css/main.349c4752.css",
+    "static/js/main.92716e11.js"
   ]
 }
