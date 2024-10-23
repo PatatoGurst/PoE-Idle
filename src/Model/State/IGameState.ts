@@ -1,5 +1,5 @@
-import ICharacterState from '../Character/ICharacterState';
-import IInventoryState from '../Inventory/IInventoryState';
+import ICharacterState from '../Character/CharacterState';
+import IInventoryState from '../Inventory/InventoryState';
 
 export default interface IGameState {
   character: ICharacterState;

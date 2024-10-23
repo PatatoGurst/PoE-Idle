@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './SideBar.css';
+import { ROUTES } from '../../Constants/Routes';
 
 function SideBar() {
   return (
@@ -7,16 +8,19 @@ function SideBar() {
       <nav>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <Link to={ROUTES.home}>Home</Link>
           </li>
           <li>
-            <Link to='/map'>Map</Link>
+            <Link to={ROUTES.map}>Map</Link>
           </li>
           <li>
-            <Link to='/page1'>Page 1</Link>
+            <Link to={ROUTES.page1}>Page 1</Link>
           </li>
           <li>
-            <Link to='/inventory'>Inventory</Link>
+            <Link to={ROUTES.inventory}>Inventory</Link>
+          </li>
+          <li>
+            <Link to={ROUTES.options}>Options</Link>
           </li>
         </ul>
       </nav>

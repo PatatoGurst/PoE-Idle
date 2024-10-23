@@ -61,6 +61,7 @@
   },
   "devDependencies": {
     "@types/debounce": "^1.2.1",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "tsconfig-paths": "^4.2.0"
   }
 }
