@@ -1,9 +1,9 @@
-import { Navigate, Route, Routes } from 'react-router';
+import { Route, Routes } from 'react-router';
 import { ROUTES } from './Constants/Routes';
 import HomePage from './Pages/HomePage';
 import Page1 from './Pages/Page1';
 import InventoryPage from './Pages/Inventory/InventoryPage';
-import MapPage from './Pages/MapPage';
+import MapPage from './Pages/Map/MapPage';
 import OptionsPage from './Pages/OptionsPage';
 
 function PoEIdleGame() {

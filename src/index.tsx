@@ -7,15 +7,18 @@ import reportWebVitals from './reportWebVitals';
 import { MemoryRouter } from 'react-router-dom';
 import { GameStateProvider } from './Providers/GameStateProvider';
 import { TimerProvider } from './Providers/TimerProvider';
+import { CombatStateProvider } from './Providers/CombatStateProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <TimerProvider>
       <GameStateProvider>
-        <MemoryRouter>
-          <App />
-        </MemoryRouter>
+        <CombatStateProvider>
+          <MemoryRouter>
+            <App />
+          </MemoryRouter>
+        </CombatStateProvider>
       </GameStateProvider>
     </TimerProvider>
   </React.StrictMode>,

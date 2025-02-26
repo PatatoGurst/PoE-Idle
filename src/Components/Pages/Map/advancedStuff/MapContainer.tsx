@@ -1,9 +1,8 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Layer, Stage } from 'react-konva';
 import './MapContainer.css';
 import HexagonGrid from './HexagonGrid';
-import { Hexagon, Tile, createRectangleMap, hexagonemap, custommap, HALF_HEIGHT } from './MapUtils';
+import { createRectangleMap, custommap, HALF_HEIGHT, Hexagon, hexagonemap, Tile } from './MapUtils';
 import SideMap from './SideMap';
 import { map1 } from './Custom/map1';
 import Map from '@Models/Map';
@@ -114,11 +113,11 @@ function MapContainer() {
   };
 
   return (
-    <div className='map-container'>
-      <div className='side'>
+    <div className="map-container">
+      <div className="side">
         <SideMap clickOnTile={clickOnTile} showRadius={showRadius} resetMap={resetMap} />
       </div>
-      <div className='map' ref={divRef}>
+      <div className="map" ref={divRef}>
         <Stage
           width={dimensions.width}
           height={dimensions.height}

@@ -1,0 +1,30 @@
+#combat-grid-container {
+    display: grid;
+    grid-template-areas: 'player enemies';
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+#player {
+    grid-area: player;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#enemies {
+    grid-area: enemies;
+    background-color: rgba(200, 0, 0, 0.5);
+}
+
+.health-bar-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.health-bar {
+    height: 20px;
+    background-color: #76c7c0;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+}

@@ -16,7 +16,7 @@ function HexagonTile(props: {
         radius={props.tile.radius}
         rotation={30}
         fill={props.tile.color}
-        stroke='red'
+        stroke="red"
         strokeWidth={1}
         onMouseEnter={() => props.mouseEnter(props.tile)}
         onMouseLeave={() => props.mouseLeave(props.tile)}
@@ -26,7 +26,7 @@ function HexagonTile(props: {
         text={props.tile.a + ' | ' + props.tile.b}
         x={props.tile.x}
         y={props.tile.y}
-        stroke='white'
+        stroke="white"
         strokeWidth={1}
         offsetX={3 * (props.tile.a.toString() + props.tile.b.toString()).length}
       />
