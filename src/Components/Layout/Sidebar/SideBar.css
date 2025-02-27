@@ -1,0 +1,13 @@
+.link-menu {
+    background-image: url('/src/Images/background-menu.png');
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    margin: 5px 0;
+    list-style: none;
+    height: 89px;
+}
+
+ul {
+    padding: 0;
+}

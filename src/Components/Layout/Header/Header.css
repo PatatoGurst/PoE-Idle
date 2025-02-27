@@ -1,18 +1,19 @@
 #header {
-  background: #00022e;
-  align-items: center;
-  justify-content: center;
-  color: #fc86aa;
+    background: var(--background-color);
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
 }
 
 .icon {
-  padding: 10px;
+    padding: 10px;
 }
 
 .icon:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .header-title {
-  margin: auto;
+    margin: auto;
 }
+

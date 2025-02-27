@@ -1,31 +1,51 @@
+:root {
+    --title-color: #dfcf99;
+    --background-color: #000000;
+    --background-color-2: #0C0B0B;
+    --text-color: #a38d6d;
+}
+
+
 #App {
-  text-align: center;
-  display: grid;
-  grid-template-areas:
+    text-align: center;
+    display: grid;
+    grid-template-areas:
     'header header '
     'side content'
     'footer footer';
-  grid-template-columns: 10% 90%;
-  grid-template-rows: 10% 80% 10%;
-  color: #000133;
-  width: 100vw;
-  height: 100vh;
+    grid-template-columns: 291px 1fr;
+    grid-template-rows: 10% 80% 10%;
+    color: var(--text-color);
+    width: 100vw;
+    height: 100vh;
 }
 
 #main {
-  background: #08092f;
-  color: #fc86aa;
-  grid-area: content;
+    background: var(--background-color);
+    color: var(--text-color);
+    grid-area: content;
 }
 
 #side {
-  grid-area: side;
+    grid-area: side;
 }
 
 #header {
-  grid-area: header;
+    grid-area: header;
 }
 
 #footer {
-  grid-area: footer;
+    grid-area: footer;
+}
+
+h1 {
+    color: var(--title-color);
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "FontinRegular", Verdana, Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
 }

@@ -4,22 +4,22 @@ import { ROUTES } from '../../Constants/Routes';
 
 function SideBar() {
   return (
-    <div id='side'>
+    <div id="side">
       <nav>
         <ul>
-          <li>
+          <li className="link-menu">
             <Link to={ROUTES.home}>Home</Link>
           </li>
-          <li>
+          <li className="link-menu">
             <Link to={ROUTES.map}>Map</Link>
           </li>
-          <li>
+          <li className="link-menu">
             <Link to={ROUTES.page1}>Page 1</Link>
           </li>
-          <li>
+          <li className="link-menu">
             <Link to={ROUTES.inventory}>Inventory</Link>
           </li>
-          <li>
+          <li className="link-menu">
             <Link to={ROUTES.options}>Options</Link>
           </li>
         </ul>

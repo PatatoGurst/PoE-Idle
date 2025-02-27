@@ -1,8 +1,12 @@
 #combat-grid-container {
     display: grid;
-    grid-template-areas: 'player enemies';
-    grid-template-columns: 1fr 1fr;
-    height: 100vh;
+    grid-template-areas:
+        'player enemies'
+        'actions actions';
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 90% 10%;
+    width: 100%;
+    height: 100%;
 }
 
 #player {
@@ -13,6 +17,10 @@
 #enemies {
     grid-area: enemies;
     background-color: rgba(200, 0, 0, 0.5);
+}
+
+#actions {
+    grid-area: actions;
 }
 
 .health-bar-container {
@@ -27,4 +35,27 @@
     background-color: #76c7c0;
     width: 0;
     transition: width 0.3s ease-in-out;
+}
+
+/* ActMap.css */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+.tab.active {
+    border-bottom: 2px solid #000;
+}
+
+.tab-content {
+    padding: 20px;
 }
