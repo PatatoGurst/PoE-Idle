@@ -9,7 +9,7 @@ export default function CombatEngine() {
     character: { updateCharacter },
   } = useContext(GameState);
 
-  const { setIsInCombat, isStartingCombat, setIsStartingCombat } = useContext(CombatState);
+  const { launchCombat, isStartingCombat } = useContext(CombatState);
 
   useEffect(() => {
     if (isStartingCombat) {
@@ -20,14 +20,13 @@ export default function CombatEngine() {
 
   useEffect(() => {
     if (timer % 20 === 0) {
-      updateCharacter.addExperience(132);
+      tickFight();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timer]);
 
-  const launchCombat = () => {
-    setIsInCombat(true);
-    setIsStartingCombat(false);
+  const tickFight = () => {
+// TODO implement combat logic
   };
 
   return <></>;

@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { calculateExperienceNextLevel } from '../Utils/Character/Experience.utils';
 import ICharacterState from '@Models/Character/CharacterState';
 import Character from '@Models/Character/Character';
+import useComputedStats from './useComputedStats';
 
 export default function useCharacter(saveCharacter: Character): ICharacterState {
   const [name, setName] = useState(saveCharacter.name);
   const [level, setLevel] = useState(saveCharacter.level);
   const [experience, setExperience] = useState(saveCharacter.experience);
   const [experienceLevelUp, setExperienceLevelUp] = useState(saveCharacter.experienceLevelUp);
-
+  const { computedStats } = useComputedStats();
   const changeName = (newName: string) => {
     setName(newName);
   };
@@ -33,6 +34,7 @@ export default function useCharacter(saveCharacter: Character): ICharacterState 
       level,
       experience,
       experienceLevelUp,
+      computedStats,
     },
     updateCharacter: {
       changeName,

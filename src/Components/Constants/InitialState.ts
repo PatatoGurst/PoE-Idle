@@ -14,6 +14,11 @@ const initialCharacter: Character = {
   experience: 0,
   experienceLevelUp: calculateExperienceNextLevel(1),
   name: 'Unamed Exile',
+  computedStats: {
+    health: 100,
+    attackDamage: 10,
+    attackSpeed: 1,
+  },
 };
 
 export const initialSave: ISaveState = {

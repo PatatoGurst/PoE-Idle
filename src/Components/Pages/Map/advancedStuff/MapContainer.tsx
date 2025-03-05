@@ -5,13 +5,16 @@ import HexagonGrid from './HexagonGrid';
 import { createRectangleMap, custommap, HALF_HEIGHT, Hexagon, hexagonemap, Tile } from './MapUtils';
 import SideMap from './SideMap';
 import { map1 } from './Custom/map1';
-import Map from '@Models/Map';
+
+interface MapState {
+  grid: any;
+}
 
 function MapContainer() {
   const divRef = React.useRef<HTMLInputElement>(null);
-  const [hexagonMap, setHexagonMap] = useState<Map>(createRectangleMap());
-  const [hexagonGrid2, setHexagonGrid2] = useState<Map>(hexagonemap(HALF_HEIGHT));
-  const [hexagonGrid3, setHexagonGrid3] = useState<Map>(custommap(map1, HALF_HEIGHT));
+  const [hexagonMap, setHexagonMap] = useState<MapState>(createRectangleMap());
+  const [hexagonGrid2, setHexagonGrid2] = useState<MapState>(hexagonemap(HALF_HEIGHT));
+  const [hexagonGrid3, setHexagonGrid3] = useState<MapState>(custommap(map1, HALF_HEIGHT));
   const [dimensions, setDimensions] = useState({
     width: 0,
     height: 0,

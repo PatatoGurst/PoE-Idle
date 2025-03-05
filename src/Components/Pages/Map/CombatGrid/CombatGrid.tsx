@@ -5,7 +5,7 @@ import { CombatState } from '../../../../Providers/CombatStateProvider';
 export default function CombatGrid() {
   const [health, setHealth] = useState(100);
   const [enemyHealth, setEnemyHealth] = useState(100);
-  const { setIsInCombat } = useContext(CombatState);
+  const { endCombat } = useContext(CombatState);
 
   return (
     <div id="combat-grid-container">
@@ -17,7 +17,7 @@ export default function CombatGrid() {
         <button onClick={() => setEnemyHealth(enemyHealth - 10)}>Prendre des dégâts</button>
       </div>
       <div id="actions">
-        <button onClick={() => setIsInCombat(false)}>Flee</button>
+        <button onClick={() => endCombat()}>Flee</button>
       </div>
     </div>
   );

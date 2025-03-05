@@ -1,9 +1,7 @@
 import ComputedStats from '@Models/ComputedStats/ComputedStats';
 
-export default interface Character {
+export default interface Monster {
+  rarity: string;
   name: string;
-  level: number;
-  experience: number;
-  experienceLevelUp: number;
   computedStats: ComputedStats;
 }

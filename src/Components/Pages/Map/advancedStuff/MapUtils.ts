@@ -1,6 +1,8 @@
-import Map from '@Models/Map';
-import Monster from '@Models/Monster';
 import Player from '@Models/Player';
+
+type Monster = {
+  rarity: string;
+}
 
 type Hexagon = {
   x: number;
@@ -34,7 +36,13 @@ const tileHeight: Tile = {
   y: -diffY,
 };
 
-const createRectangleMap = (): Map => {
+interface MapState {
+  monsters: Monster[];
+  player: Player;
+  grid: any;
+}
+
+const createRectangleMap = (): MapState => {
   const p: Player = {
     name: 'toto',
   };
