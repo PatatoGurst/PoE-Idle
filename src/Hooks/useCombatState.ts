@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import ICombatState from '@Models/State/ICombatState';
 import MapState from '@Models/Map/MapState';
-import Monster from '@Models/Monster/Monster';
+import useMonster from './useMonster';
 
 export default function useCombatState(): ICombatState {
   const [isInCombat, setIsInCombat] = useState(false);
   const [isStartingCombat, setIsStartingCombat] = useState(false);
   const [map, setMap] = useState<MapState | undefined>(undefined);
-  const [currentEnemy, setCurrentEnemy] = useState<Monster | undefined>(undefined);
+  const { monster, changeMonster } = useMonster();
 
   const startCombat = (map: MapState) => {
     setIsStartingCombat(true);
@@ -17,6 +17,7 @@ export default function useCombatState(): ICombatState {
   const launchCombat = () => {
     setIsInCombat(true);
     setIsStartingCombat(false);
+    changeMonster(map?.monsters[0]);
   };
 
   const endCombat = () => {
@@ -24,5 +25,5 @@ export default function useCombatState(): ICombatState {
     setMap(undefined);
   };
 
-  return { isInCombat, isStartingCombat, startCombat, launchCombat, endCombat, map };
+  return { isInCombat, isStartingCombat, startCombat, launchCombat, endCombat, map, monster: monster?.monster };
 }

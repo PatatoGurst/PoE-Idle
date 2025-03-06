@@ -6,6 +6,7 @@ export default function useAct1(): MapState {
       rarity: 'common',
       name: 'Goblin',
       computedStats: {
+        maxHealth: 10,
         health: 10,
         attackDamage: 1,
         attackSpeed: 1,
@@ -14,6 +15,7 @@ export default function useAct1(): MapState {
       rarity: 'magic',
       name: 'Orc',
       computedStats: {
+        maxHealth: 20,
         health: 20,
         attackDamage: 2,
         attackSpeed: 2,

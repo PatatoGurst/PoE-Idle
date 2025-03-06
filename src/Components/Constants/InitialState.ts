@@ -15,6 +15,7 @@ const initialCharacter: Character = {
   experienceLevelUp: calculateExperienceNextLevel(1),
   name: 'Unamed Exile',
   computedStats: {
+    maxHealth: 100,
     health: 100,
     attackDamage: 10,
     attackSpeed: 1,
