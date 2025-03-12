@@ -9,4 +9,5 @@ export default interface ICombatState {
   endCombat: () => void;
   map: MapState | undefined;
   monster: Monster | undefined;
+  attack: () => void;
 }

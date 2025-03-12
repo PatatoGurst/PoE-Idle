@@ -9,7 +9,7 @@ export default function useCharacter(saveCharacter: Character): ICharacterState 
   const [level, setLevel] = useState(saveCharacter.level);
   const [experience, setExperience] = useState(saveCharacter.experience);
   const [experienceLevelUp, setExperienceLevelUp] = useState(saveCharacter.experienceLevelUp);
-  const { computedStats } = useComputedStats();
+  const { computedStats } = useComputedStats(saveCharacter.computedStats);
   const changeName = (newName: string) => {
     setName(newName);
   };

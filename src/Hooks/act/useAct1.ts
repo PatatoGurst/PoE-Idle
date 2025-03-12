@@ -8,6 +8,7 @@ export default function useAct1(): MapState {
       computedStats: {
         maxHealth: 10,
         health: 10,
+        percentageHealth: 100,
         attackDamage: 1,
         attackSpeed: 1,
       },
@@ -17,6 +18,7 @@ export default function useAct1(): MapState {
       computedStats: {
         maxHealth: 20,
         health: 20,
+        percentageHealth: 100,
         attackDamage: 2,
         attackSpeed: 2,
       },

@@ -25,5 +25,9 @@ export default function useCombatState(): ICombatState {
     setMap(undefined);
   };
 
-  return { isInCombat, isStartingCombat, startCombat, launchCombat, endCombat, map, monster: monster?.monster };
+  const attack = () => {
+    monster?.updateMonster.takeDamage(12);
+  };
+
+  return { isInCombat, isStartingCombat, startCombat, launchCombat, endCombat, map, monster: monster?.monster, attack };
 }

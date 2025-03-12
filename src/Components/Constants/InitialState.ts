@@ -17,6 +17,7 @@ const initialCharacter: Character = {
   computedStats: {
     maxHealth: 100,
     health: 100,
+    percentageHealth: 100,
     attackDamage: 10,
     attackSpeed: 1,
   },
