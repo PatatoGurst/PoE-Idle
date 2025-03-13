@@ -1,13 +1,23 @@
 import IComputedStatsState from '@Models/ComputedStats/ComputedStatsState';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ComputedStats from '@Models/ComputedStats/ComputedStats';
 
 export default function useComputedStats(computedStats?: ComputedStats): IComputedStatsState {
-  const [attackDamage, setAttackDamage] = useState(computedStats?.attackDamage || 1);
-  const [attackSpeed, setAttackSpeed] = useState(computedStats?.attackSpeed || 1);
-  const [health, setHealth] = useState(computedStats?.health || 1);
-  const [maxHealth, setMaxHealth] = useState(computedStats?.maxHealth || 1);
-  const [percentageHealth, setPercentageHealth] = useState(computedStats?.health || 1);
+  const [attackDamage, setAttackDamage] = useState(1);
+  const [attackSpeed, setAttackSpeed] = useState(1);
+  const [health, setHealth] = useState(1);
+  const [maxHealth, setMaxHealth] = useState(1);
+  const [percentageHealth, setPercentageHealth] = useState(1);
+
+  useEffect(() => {
+    if (computedStats) {
+      setAttackDamage(computedStats.attackDamage);
+      setAttackSpeed(computedStats.attackSpeed);
+      setHealth(computedStats.health);
+      setMaxHealth(computedStats.maxHealth);
+      setPercentageHealth(computedStats.percentageHealth);
+    }
+  }, [computedStats]);
 
   const updateMaxHealth = (newMaxHealth: number) => {
     setMaxHealth(newMaxHealth);

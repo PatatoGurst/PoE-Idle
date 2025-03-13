@@ -8,6 +8,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { GameStateProvider } from './Providers/GameStateProvider';
 import { TimerProvider } from './Providers/TimerProvider';
 import { CombatStateProvider } from './Providers/CombatStateProvider';
+import { LootProvider } from './Providers/LootProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -15,9 +16,11 @@ root.render(
     <TimerProvider>
       <GameStateProvider>
         <CombatStateProvider>
-          <MemoryRouter>
-            <App />
-          </MemoryRouter>
+          <LootProvider>
+            <MemoryRouter>
+              <App />
+            </MemoryRouter>
+          </LootProvider>
         </CombatStateProvider>
       </GameStateProvider>
     </TimerProvider>

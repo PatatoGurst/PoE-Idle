@@ -1,4 +1,4 @@
 export default interface MonsterManagement {
-  takeDamage: (damage: number) => void;
+  takeDamage: (damage: number) => boolean;
   attack: () => number;
 }

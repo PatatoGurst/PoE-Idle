@@ -6,16 +6,18 @@ import useComputedStats from './useComputedStats';
 
 export default function useMonster(): IUseMonster {
   const [currentMonster, setcurrentMonster] = useState<Monster | undefined>(undefined);
-  console.log(currentMonster?.computedStats);
   const { computedStats, updateComputedStats } = useComputedStats(currentMonster?.computedStats);
+
   const attack = () => {
     const damageAmount = 12;
     console.log('attack');
     return damageAmount;
   };
 
-  const takeDamage = (damage: number) => {
-    updateComputedStats.updateHealth(computedStats.health - damage);
+  const takeDamage = (damage: number): boolean => {
+    const newHealth = computedStats.health - damage;
+    updateComputedStats.updateHealth(newHealth);
+    return newHealth <= 0;
   };
 
 

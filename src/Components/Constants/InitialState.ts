@@ -18,7 +18,7 @@ const initialCharacter: Character = {
     maxHealth: 100,
     health: 100,
     percentageHealth: 100,
-    attackDamage: 10,
+    attackDamage: 1,
     attackSpeed: 1,
   },
 };
